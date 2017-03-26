@@ -1,7 +1,7 @@
 #
 # .bash_profile
-#
-# @author Jeff Geerling
+# @author Vinodh Ganesan
+# @leadauthor Jeff Geerling
 # @see .inputrc
 #
 
