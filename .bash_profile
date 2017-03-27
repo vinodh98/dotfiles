@@ -13,7 +13,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # Custom $PATH with extra locations.
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/git/bin:$HOME/.composer/vendor/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/git/bin:$PATH
 
 # Include alias file (if present) containing aliases for ssh, etc.
 if [ -f ~/.bash_aliases ]
@@ -48,6 +48,9 @@ fi
 function pretty() {
   pbpaste | highlight --syntax=$1 -O rtf | pbcopy
 }
+
+# aliases
+alias dev='cd ~/Dropbox/Development/GitHub'
 
 # Git aliases.
 alias gs='git status'
@@ -122,18 +125,3 @@ prod_command_trap () {
 }
 shopt -s extdebug
 trap prod_command_trap DEBUG
-
-function blt() {
-  if [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
-    GIT_ROOT=$(git rev-parse --show-cdup)
-  else
-    GIT_ROOT="."
-  fi
-
-  if [ -f "$GIT_ROOT/vendor/bin/blt" ]; then
-    $GIT_ROOT/vendor/bin/blt "$@"
-  else
-    echo "You must run this command from within a BLT-generated project repository."
-    exit 1
-  fi
-}
