@@ -51,7 +51,8 @@ function pretty() {
 
 # aliases
 alias dev='cd ~/Dropbox/Development/GitHub'
-
+alias ll-'ls -ltr'
+alias la='ls -latr'
 # Git aliases.
 alias gs='git status'
 alias gc='git commit'
