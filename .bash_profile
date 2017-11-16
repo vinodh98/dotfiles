@@ -49,10 +49,13 @@ function pretty() {
   pbpaste | highlight --syntax=$1 -O rtf | pbcopy
 }
 
-# aliases
+# my aliases
 alias dev='cd ~/Dropbox/Development/GitHub'
-alias ll-'ls -ltr'
+alias ll='ls -ltr'
 alias la='ls -latr'
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # Git aliases.
 alias gs='git status'
 alias gc='git commit'
